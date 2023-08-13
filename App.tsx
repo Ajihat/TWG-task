@@ -1,6 +1,14 @@
 import { AppRegistry } from 'react-native';
 import { useFonts } from 'expo-font';
-import { View } from 'react-native';
+import { ApolloProvider } from '@apollo/client';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+import { client } from './apollo';
+
+import { RootStackParamList } from './types/types';
+
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -9,7 +17,24 @@ export default function App() {
     'Poppins-SamiBold': require('./assets/fonts/Poppins-SemiBold.ttf'),
     'Poppins-Bold': require('./assets/fonts/Poppins-Bold.ttf'),
   });
-  return <View></View>;
+  return (
+    <ApolloProvider client={client}>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen
+            name="Home"
+            component={Rooms}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Chat"
+            component={Chat}
+            options={{ headerShown: false }}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </ApolloProvider>
+  );
 }
 
 AppRegistry.registerComponent('MyApplication', () => App);
