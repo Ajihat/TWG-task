@@ -1,6 +1,7 @@
 import { View } from 'react-native';
 
 import { TopBarProps } from './TopBar.types';
+
 import { styles } from './TopBar.styles';
 
 export const TopBar = ({ children }: TopBarProps) => {

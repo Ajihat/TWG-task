@@ -1,9 +1,11 @@
-import { View, Text, ScrollView } from 'react-native';
+import { ScrollView } from 'react-native';
 import { useQuery } from '@apollo/client';
-import { GET_ROOMS } from '../../apollo/methods/getRooms';
+
 import { Loader } from '../Loader/Loader';
 import { ErrorSign } from '../ErrorSing/ErrorSign';
 import { RoomTile } from '../RoomTile/RoomTile';
+
+import { GET_ROOMS } from '../../apollo/methods/getRooms';
 
 import { GetRoomsData } from './RoomsList.types';
 

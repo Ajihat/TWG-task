@@ -1,10 +1,10 @@
 import { View, Image, Text, TouchableWithoutFeedback } from 'react-native';
 import { useQuery } from '@apollo/client';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import { RootStackParamList } from '../../types/types';
+import { useNavigation } from '@react-navigation/native';
 
 import { RoomTileProps, GetRoomMessagesData } from './RoomTile.types';
-import { useNavigation } from '@react-navigation/native';
+import { RootStackParamList } from '../../types/types';
 
 import { GET_ROOM_MESSAGES } from '../../apollo/methods/getRoomMessages';
 

@@ -1,11 +1,11 @@
 import { View, Image, TouchableWithoutFeedback, Text } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-
-import { styles } from './ChatLabel.styles';
-
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+
 import { RootStackParamList } from '../../types/types';
 import { ChatLabelProps } from './ChatLabelProps.types';
+
+import { styles } from './ChatLabel.styles';
 
 export const ChatLabel = ({ roomName }: ChatLabelProps) => {
   const navigation =
